@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "Microsoft"
+    },
+    {
+        "id": 2,
+        "nombre": "Apple"
+    },
+    {
+        "id": 3,
+        "nombre": "Google"
+    },
+    {
+        "id": 4,
+        "nombre": "Facebook"
+    },
+    {
+        "id": 5,
+        "nombre": "Amazon"
+    }
+]
