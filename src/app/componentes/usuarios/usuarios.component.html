@@ -1,6 +1,17 @@
 <div class="container">
-    <div style="margin-top: 60px;" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
-        <mat-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%" *ngFor="let usuario of usuariosList | async" class="usuarios-card">
+    <div class="usuarios-button-row">
+        <div class="usuarios-flex-container">
+            <div class="usuarios-button-container">
+                <button (click)="abrirModal()" mat-fab color="primary" aria-label="usuarios icon button with a delete icon">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="usuarios-flexgrid" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+        <mat-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"
+            *ngFor="let usuario of usuariosList | async" class="usuarios-card">
             <mat-card-header>
                 <img mat-card-avatar src="/assets/avatars/{{usuario.cedula}}.png" alt="avatar">
                 <mat-card-title>{{ usuario.nombres }} {{ usuario.apellidos }}</mat-card-title>
@@ -18,4 +29,3 @@
         </mat-card>
     </div>
 </div>
-

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -11,6 +12,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
@@ -26,6 +31,8 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
@@ -35,6 +42,10 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
     BrowserAnimationsModule
   ],
   providers: [],
