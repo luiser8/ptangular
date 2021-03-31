@@ -15,17 +15,19 @@ import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { ModalComponent } from './componentes/usuarios/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,10 +47,11 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
     MatDialogModule,
     MatInputModule,
     MatSelectModule,
-    MatDatepickerModule,
+    MatSnackBarModule,
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule { }

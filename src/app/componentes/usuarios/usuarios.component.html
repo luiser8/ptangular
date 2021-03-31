@@ -2,7 +2,7 @@
     <div class="usuarios-button-row">
         <div class="usuarios-flex-container">
             <div class="usuarios-button-container">
-                <button (click)="abrirModal()" mat-fab color="primary" aria-label="usuarios icon button with a delete icon">
+                <button (click)="abrirModal('Add',{})" mat-fab color="primary" aria-label="usuarios icon button with a delete icon">
                     <mat-icon>add</mat-icon>
                 </button>
             </div>
@@ -11,7 +11,7 @@
 
     <div class="usuarios-flexgrid" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
         <mat-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"
-            *ngFor="let usuario of usuariosList | async" class="usuarios-card">
+            *ngFor="let usuario of usuariosList" class="usuarios-card">
             <mat-card-header>
                 <img mat-card-avatar src="/assets/avatars/{{usuario.cedula}}.png" alt="avatar">
                 <mat-card-title>{{ usuario.nombres }} {{ usuario.apellidos }}</mat-card-title>
@@ -20,11 +20,11 @@
                 <p>{{ usuario.cedula }}</p>
                 <p>{{ usuario.telefono }}</p>
                 <p>{{ usuario.fechaNacimiento }}</p>
-                <p>{{ usuario.organizacionId }}</p>
+                <p>{{ usuario.organizacion }}</p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>Editar</button>
-                <button mat-button>Eliminar</button>
+                <button (click)="abrirModal('Update',usuario)" mat-button>Editar</button>
+                <button (click)="abrirModal('Delete',usuario)" mat-button>Eliminar</button>
             </mat-card-actions>
         </mat-card>
     </div>

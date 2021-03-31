@@ -5,5 +5,5 @@ export interface Usuario {
     apellidos: String;
     fechaNacimiento: String;
     telefono: String;
-    organizacionId: Number;
+    organizacion: String;
 }

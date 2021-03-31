@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Agregar usuario</h1>
+<mat-dialog-content [formGroup]="formulario">
+  <mat-form-field>
+    <input type="text" [(ngModel)]="local_data.cedula" required matInput formControlName="cedula">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" [(ngModel)]="local_data.nombres" required matInput formControlName="nombres">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" [(ngModel)]="local_data.apellidos" required matInput formControlName="apellidos">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" [(ngModel)]="local_data.telefono" required matInput formControlName="telefono">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="date" [(ngModel)]="local_data.fechaNacimiento" required matInput formControlName="fechaNacimiento">
+  </mat-form-field>
+  <mat-form-field>
+  <mat-label>Organizaciones</mat-label>
+  <mat-select [(ngModel)]="local_data.organizacion" matInput required formControlName="organizacion">
+    <mat-option *ngFor="let item of organizacionesList" [value]="item.nombre">{{item.nombre}}</mat-option>
+  </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button (click)="closeDialog()" mat-button mat-dialog-close>Cerrar</button>
+  <button (click)="salvar()" mat-button mat-dialog-close>Aplicar</button>
+</div>
