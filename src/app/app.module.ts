@@ -48,7 +48,7 @@ import { ModalComponent } from './componentes/usuarios/modal/modal.component';
     MatInputModule,
     MatSelectModule,
     MatSnackBarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

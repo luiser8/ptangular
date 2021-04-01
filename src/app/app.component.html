@@ -10,9 +10,9 @@
 <mat-sidenav-container>
   <mat-sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
     <mat-nav-list>
-      <a mat-list-item routerLink="/" >Dashboard</a>
+      <a mat-flat-button color="basic" routerLink="/" >Dashboard</a>
       <mat-divider></mat-divider>
-      <a mat-list-item routerLink="/usuarios" >Usuarios</a>
+      <a mat-flat-button color="basic" routerLink="/usuarios" >Usuarios</a>
     </mat-nav-list>
   </mat-sidenav>
 

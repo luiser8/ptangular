@@ -8,6 +8,7 @@
 }
 .usuarios-card {
   height: min-content;
+  margin-bottom: 22px;
 }
   
   .usuarios-header-image {

@@ -1,29 +1,41 @@
 <h1 mat-dialog-title>Agregar usuario</h1>
-<mat-dialog-content [formGroup]="formulario">
-  <mat-form-field>
-    <input type="text" [(ngModel)]="local_data.cedula" required matInput formControlName="cedula">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="text" [(ngModel)]="local_data.nombres" required matInput formControlName="nombres">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="text" [(ngModel)]="local_data.apellidos" required matInput formControlName="apellidos">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="text" [(ngModel)]="local_data.telefono" required matInput formControlName="telefono">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="date" [(ngModel)]="local_data.fechaNacimiento" required matInput formControlName="fechaNacimiento">
-  </mat-form-field>
-  <mat-form-field>
-  <mat-label>Organizaciones</mat-label>
-  <mat-select [(ngModel)]="local_data.organizacion" matInput required formControlName="organizacion">
-    <mat-option *ngFor="let item of organizacionesList" [value]="item.nombre">{{item.nombre}}</mat-option>
-  </mat-select>
-  </mat-form-field>
-</mat-dialog-content>
 
-<div mat-dialog-actions>
-  <button (click)="closeDialog()" mat-button mat-dialog-close>Cerrar</button>
-  <button (click)="salvar()" mat-button mat-dialog-close>Aplicar</button>
-</div>
+<form [formGroup]="formUsuarios">
+  <mat-dialog-content>
+    <mat-form-field>
+      <input type="text" autocomplete="off" [(ngModel)]="local_data.cedula" placeholder="Cédula" required matInput
+        formControlName="cedula">
+        <mat-error *ngIf="formUsuarios?.controls?.cedula?.hasError('pattern')">Campo cédula es admitido solo números</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" autocomplete="off" [(ngModel)]="local_data.nombres" placeholder="Nombres" required matInput
+        formControlName="nombres">
+        <mat-error *ngIf="formUsuarios?.controls?.nombres?.hasError('pattern')">Campo nombres es admitido solo letras</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" autocomplete="off" [(ngModel)]="local_data.apellidos" placeholder="Apellidos" required matInput
+        formControlName="apellidos">
+        <mat-error *ngIf="formUsuarios?.controls?.apellidos?.hasError('pattern')">Campo apellidos es admitido solo letras</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" autocomplete="off" [(ngModel)]="local_data.telefono" placeholder="Teléfono +xx xxx xxx xxxx " required matInput
+        formControlName="telefono">
+        <mat-error *ngIf="formUsuarios?.controls?.telefono?.hasError('pattern')">Campo telefono es admitido solo carácteres y números</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="date" autocomplete="off" [(ngModel)]="local_data.fechaNacimiento" required matInput formControlName="fechaNacimiento">
+      <mat-error *ngIf="formUsuarios?.controls?.fechaNacimiento?.hasError('pattern')">Campo fecha de nacimiento es admitido solo fechas</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Organizaciones</mat-label>
+      <mat-select [(ngModel)]="local_data.organizacion" required formControlName="organizacion">
+        <mat-option *ngFor="let item of organizacionesList" [value]="item.nombre">{{item.nombre}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formUsuarios?.controls?.organizacion?.hasError('required')">Debes seleccionar alguna organización</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+  <div mat-dialog-actions>
+    <button (click)="cerrarDialog()" mat-raised-button color="basic">Cerrar</button>
+    <button (click)="salvar()" [disabled]="!formUsuarios.valid" type="submit" mat-raised-button color="primary">Aplicar</button>
+  </div>
+</form>
