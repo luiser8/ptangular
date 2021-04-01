@@ -16,6 +16,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
+import * as more from 'highcharts/highcharts-more.src';
+import * as highmaps from 'highcharts/modules/map.src';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
@@ -49,8 +52,11 @@ import { ModalComponent } from './componentes/usuarios/modal/modal.component';
     MatSelectModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
+    ChartModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HIGHCHARTS_MODULES, useFactory: () => [ more, highmaps ] }
+  ],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent]
 })
