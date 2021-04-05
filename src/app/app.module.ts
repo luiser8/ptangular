@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { ModalComponent } from './componentes/usuarios/modal/modal.component';
+import { FilterPipe } from './componentes/usuarios/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ModalComponent } from './componentes/usuarios/modal/modal.component';
     DashboardComponent,
     UsuariosComponent,
     ModalComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

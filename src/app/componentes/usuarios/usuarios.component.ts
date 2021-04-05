@@ -68,6 +68,7 @@ export class UsuariosComponent implements OnInit {
   public durationInSeconds = 5;
   public horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   public verticalPosition: MatSnackBarVerticalPosition = 'top';
+  public search: any = '';
 
   constructor(private readonly dialog: MatDialog, private _snackBar: MatSnackBar) { }
   
