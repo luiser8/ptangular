@@ -1,4 +1,7 @@
 <div class="container">
+    <!-- <mat-form-field>
+        <input type="text" [(ngModel)]="search" placeholder="Buscar" matInput />
+    </mat-form-field> -->
     <div class="usuarios-button-row">
         <div class="usuarios-flex-container">
             <div class="usuarios-button-container">
@@ -25,7 +28,7 @@
             </mat-card-content>
             <mat-card-actions>
                 <button (click)="abrirModal('Update', usuario)" mat-raised-button color="primary">Editar</button>
-                <button (click)="abrirModal('Delete', usuario)" mat-raised-button color="primary">Eliminar</button>
+                <button (click)="eliminarUsuario(usuario)" mat-raised-button color="primary">Eliminar</button>
             </mat-card-actions>
         </mat-card>
     </div>

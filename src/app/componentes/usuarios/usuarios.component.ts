@@ -12,7 +12,7 @@ const ELEMENT_USR: Usuario[] = [
     "nombres": "José Miguel",
     "apellidos": "Díaz",
     "fechaNacimiento": "10-12-1987",
-    "telefono": "+58 412-147-8796",
+    "telefono": "+58 412 147 8796",
     "organizacion": "Amazon"
   },
   {
@@ -22,7 +22,7 @@ const ELEMENT_USR: Usuario[] = [
     "nombres": "Maria",
     "apellidos": "Rodriguez",
     "fechaNacimiento": "01-01-1997",
-    "telefono": "+58 414-877-2257",
+    "telefono": "+58 414 877 2257",
     "organizacion": "Facebook"
   },
   {
@@ -32,7 +32,7 @@ const ELEMENT_USR: Usuario[] = [
     "nombres": "Luisa",
     "apellidos": "Mendez",
     "fechaNacimiento": "25-11-1977",
-    "telefono": "+58 416-847-7744",
+    "telefono": "+58 416 847 7744",
     "organizacion": "Microsoft"
   },
   {
@@ -42,7 +42,7 @@ const ELEMENT_USR: Usuario[] = [
     "nombres": "Luis José",
     "apellidos": "González",
     "fechaNacimiento": "08-06-1967",
-    "telefono": "+58 412-889-0044",
+    "telefono": "+58 412 889 0044",
     "organizacion": "Apple"
   },
   {
@@ -52,7 +52,7 @@ const ELEMENT_USR: Usuario[] = [
     "nombres": "Fabián",
     "apellidos": "Ramírez",
     "fechaNacimiento": "04-10-1998",
-    "telefono": "+58 412-225-2200",
+    "telefono": "+58 412 2252200",
     "organizacion": "Google"
   }
 ];
@@ -68,6 +68,7 @@ export class UsuariosComponent implements OnInit {
   public durationInSeconds = 5;
   public horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   public verticalPosition: MatSnackBarVerticalPosition = 'top';
+  public search: any = '';
 
   constructor(private readonly dialog: MatDialog, private _snackBar: MatSnackBar) { }
   
